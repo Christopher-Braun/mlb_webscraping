@@ -1,0 +1,25 @@
+﻿{% extends "mlb/base.html" %}
+
+{% block header %}
+
+<div class='jumbotron'>
+    <h1>List of all MLB Teams</h1>
+</div>
+
+{% endblock header %}
+
+<p>MLB</p>
+
+{% block content %}
+
+<h2>
+    <a href="{% url 'users:register' %}">Register an account</a> to make
+    your own Learning Log, and list the topics you're learning about.
+</h2>
+<h2>
+    Whenever you learn something new about a topic, make an entry
+    summarizing what you've learned.
+</h2>
+    
+
+{% endblock content %}

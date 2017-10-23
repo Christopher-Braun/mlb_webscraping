@@ -1,0 +1,39 @@
+﻿{% extends "mlb/base.html" %}
+
+{% block header %}
+
+<h3><a href="{% url 'mlb:teams' %}">MLB TEAM PAGE</h3>
+
+<div class='jumbotron'>
+    <h1>List of all players on the {{team.full_name}}</h1>
+</div>
+
+{% endblock header %}
+
+<p>TEAMS</p>
+
+{% block content %}
+
+<ul>
+
+    {% for player in players %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h5>
+                <a href="{% url 'mlb:players' %}">{{player}}</a>
+                {{player.league}}
+                {{player.games}}
+                {{player.Tav}}
+                {{player.VORP}}
+                {{player.FRAA}}
+                {{player.BWARP}}
+            </h5>
+        </div>
+    </div>
+
+    {% endfor %}
+
+</ul>
+
+
+{% endblock content %}
