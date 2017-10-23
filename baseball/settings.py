@@ -25,6 +25,7 @@ SECRET_KEY = '68yrp2a5s4a-&##ayjcltx&=-!e(pgx^m--x!8+vw7+d-4(kt*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Allow only Heroku to host the project.
 ALLOWED_HOSTS = []
 
 
@@ -153,9 +154,10 @@ if cwd == '/app' or cwd[:4] == '/tmp':
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     
-    # Only allow heroku to host the project.
-    ALLOWED_HOSTS = ['*']
-    DEBUG = True
+	# Allow only Heroku to host the project.
+	ALLOWED_HOSTS = [chris-mlb-stats.herokuapp.com']
+
+    DEBUG = False
 
     # Static asset configuration
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
