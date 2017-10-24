@@ -14,26 +14,31 @@
 
 {% block content %}
 
-<ul>
-
-    {% for player in players %}
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h5>
-                <a href="{% url 'mlb:players' %}">{{player}}</a>
-                {{player.league}}
-                {{player.games}}
-                {{player.Tav}}
-                {{player.VORP}}
-                {{player.FRAA}}
-                {{player.BWARP}}
-            </h5>
-        </div>
-    </div>
-
-    {% endfor %}
-
-</ul>
-
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Player Name</th>
+            <th scope="col">League</th>
+            <th scope="col">Games</th>
+            <th scope="col">Tav</th>
+            <th scope="col">VORP</th>
+            <th scope="col">FRAA</th>
+            <th scope="col">BWARP</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for player in players %}
+        <tr>
+            <th scope="row"><a href="{% url 'mlb:players' %}">{{player}}</a></th>
+            <td>{{player.league}}</td>
+            <td>{{player.games}}</td>
+            <td>{{player.Tav}}</td>
+            <td>{{player.VORP}}</td>
+            <td>{{player.FRAA}}</td>
+            <td>{{player.BWARP}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock content %}
