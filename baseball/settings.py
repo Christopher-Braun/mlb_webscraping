@@ -26,8 +26,8 @@ SECRET_KEY = '68yrp2a5s4a-&##ayjcltx&=-!e(pgx^m--x!8+vw7+d-4(kt*'
 DEBUG = True
 
 # Allow only Heroku to host the project.
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = ['chris-mlb-stats.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
 
@@ -121,6 +121,21 @@ USE_L10N = True
 
 USE_TZ = True
 
+ADMINS = (('ll_admin', 'user@domain.com'),)
+MANAGERS = ADMINSEMAIL_HOST = 'host'
+SEND_BROKEN_LINK_EMAILS=True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mrcrbraun'
+EMAIL_HOST_PASSWORD = 'Assman.13'
+EMAIL_USE_TLS = True
+SERVER_EMAIL = 'django@my-domain.com'
+EMAIL_HOST = 'smtp.gmail.com'
+SERVER_EMAIL = EMAIL_HOST_USER
+
+
+
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Static files (CSS, JavaScript, Images)
@@ -159,7 +174,7 @@ if cwd == '/app' or cwd[:4] == '/tmp':
     
 	# Allow only Heroku to host the project.
 	ALLOWED_HOSTS = ['chris-mlb-stats.herokuapp.com']
-	DEBUG = False
+	DEBUG = True
 
 	# Static asset configuration
 	BASE_DIR = os.path.dirname(os.path.abspath(__file__))

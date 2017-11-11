@@ -1,0 +1,5 @@
+#!c:\users\mrcrb\documents\python\baseball\ll_env\scripts\python.exe
+
+import newrelic.admin
+
+newrelic.admin.main()

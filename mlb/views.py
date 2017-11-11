@@ -6,13 +6,20 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext, Template
 from datetime import datetime, timedelta
-
+import requests
 
 from mlb.models import Team, Player, Picture, Project, ProjectPic
 from mlb.forms import PictureForm, ProjectForm
 
+from rq import Queue
+from worker import conn
+
+
+
+
 def index(request):
 	"""The home page for MLB"""
+
 	wiki = "http://legacy.baseballprospectus.com/standings/index.php?dispgroup=all&submit=Go"
 	page = urllib.request.urlopen(wiki)
 	soup = BeautifulSoup(page, 'lxml')
@@ -37,7 +44,9 @@ def index(request):
 
 	return render(request, 'mlb/index.html', context)
 
+
 def players(request):
+
 	wiki1 = "http://legacy.baseballprospectus.com/sortable/index.php?cid=1918873"
 	page1 = urllib.request.urlopen(wiki1)
 	soup1 = BeautifulSoup(page1, 'lxml')
@@ -73,6 +82,8 @@ def players(request):
 	context = {'players': players, 'player_new': player_new}
 
 	return render(request, 'mlb/players.html', context)
+
+
 
 @login_required
 def team(request, team_name):
