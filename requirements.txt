@@ -7,9 +7,12 @@ django-bootstrap3==9.0.0
 flake8==3.5.0
 gunicorn==19.7.1
 idna==2.6
+image==1.5.16
 lxml==4.1.0
 mccabe==0.6.1
+olefile==0.44
 pew==1.1.0
+Pillow==4.3.0
 pipenv==8.2.7
 psutil==5.3.1
 psycopg2==2.7.3.1
