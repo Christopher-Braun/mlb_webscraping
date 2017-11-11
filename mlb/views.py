@@ -11,8 +11,6 @@ import requests
 from mlb.models import Team, Player, Picture, Project, ProjectPic
 from mlb.forms import PictureForm, ProjectForm
 
-from rq import Queue
-from worker import conn
 
 
 
