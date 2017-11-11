@@ -1,4 +1,5 @@
-﻿{% load bootstrap3 %}
+﻿{% load staticfiles %}
+{% load bootstrap3 %}
 <!DOCTYPE html>
 
 <html lang="en">
@@ -12,12 +13,18 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/baseball.css' %}">
+
 </head>
 
 <body>
     <!-- Static navbar -->
     <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
+        <div class="w3-container w3-grey">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed"
                         data-toggle="collapse" data-target="#navbar"
@@ -31,6 +38,8 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{% url 'mlb:teams' %}">Teams</a></li>
                         <li><a href="{% url 'mlb:players' %}">Players</a></li>
+                        <li><a href="{% url 'mlb:pictures' %}">Pictures</a></li>
+                        <li><a href="{% url 'mlb:projects' %}">Projects</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         {% if user.is_authenticated %}
@@ -45,13 +54,28 @@
                 </div><!--/.nav-collapse -->            
          </div>
     </nav>
-    <div class="container">
-        <div class="page-header">
-            {% block header %}{% endblock header %}
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
+        <h3 class="w3-bar-item">Menu</h3>
+        <a href="#" class="w3-bar-item w3-button">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+    </div>
+
+        <div style="margin-left:15%">
+            <div class="w3-container">
+                <div class="page-header">
+
+                    {% block header %}{% endblock header %}
+                </div>
+
+                <div>
+                    {% block content %}{% endblock content %}
+                </div>
+
+            </div> <!-- /container -->
         </div>
-        <div>
-            {% block content %}{% endblock content %}
-        </div>
-    </div> <!-- /container -->
+    
 </body>
 </html>

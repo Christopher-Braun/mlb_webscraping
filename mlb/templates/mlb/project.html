@@ -1,0 +1,62 @@
+﻿{% extends "mlb/base.html" %}
+
+
+    {% block header %}
+
+    <div class="body_boarder">
+        <div class="top">
+            <h2><a href="{% url 'mlb:projects' %}">MLB TEAM PAGE</a></h2>
+        </div>
+
+        <div class='jumbotron' align="center">
+            <h1>Code for project: {{project.name}}</h1>
+        </div>
+    </div>
+
+
+    {% endblock header %}
+
+
+    {% block content %}
+    {% load staticfiles %}
+    <table style="width: 100%">
+        <tr>
+            <th class="project_name"> {{project.name}}</th>
+            <th class="add_proj"><a href="{% url 'mlb:add_project' %}">add new project</a></th>
+        </tr>
+    </table>
+
+<div class="w3-cell-row">
+        <div class="w3-container w3-cell w3-margin-top">
+                <div class="w3-half w3-margin-top">
+                        <p>
+                            {% for line in lines %}
+                            {{line}}
+                            <br />
+                            {% endfor %}
+                        </p>
+                        <br />
+                        <h3><b>CALCULATIONS</b></h3>
+                        <p>
+                            {% for calc in calcs %}
+                            {{calc}}
+                            <br />
+                            {% endfor %}
+                        </p>
+                </div>
+               
+
+                {% load staticfiles %}
+        <div class="w3-container w3-cell">
+            <div class="w3-row-padding w3-margin-top">
+                <div class="w3-card w3-margin-top">
+                    {% for chart in charts %}
+                    <img src="{{chart.chart.url}}" alt="HTML5 Icon" width="100%">
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="caption" align="center"></div>
+        </div>
+    </div>
+</div>
+ {% endblock content %}

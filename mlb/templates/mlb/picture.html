@@ -1,0 +1,35 @@
+﻿{% extends "mlb/base.html" %}
+
+{% block header %}
+
+<div class="body_boarder">
+
+    <div class="top">
+        <h2><a href="{% url 'mlb:index' %}">MLB HOME PAGE</a></h2>
+    </div>
+
+    <div class='jumbotron' align="center">
+        <h1>{{picture.name}}</h1>
+    </div>
+</div>
+
+{% endblock header %}
+
+{% block content %}
+
+<div class="add_pic" align="right">
+
+    <h1>
+        <a href="{% url 'mlb:add_picture' %}">add new picture</a>
+    </h1>
+</div>
+
+{% load staticfiles %}
+
+    <div class="thumbnail">
+        <img src="{{picture.image.url}}" alt="HTML5 Icon" style="width:100%">
+    <div class="caption" align="center">
+    </div>
+        </div>
+
+{% endblock content %}

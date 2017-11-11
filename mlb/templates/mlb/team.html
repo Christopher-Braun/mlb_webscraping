@@ -2,19 +2,28 @@
 
 {% block header %}
 
-<h3><a href="{% url 'mlb:teams' %}">MLB TEAM PAGE</h3>
 
-<div class='jumbotron'>
-    <h1>List of all players on the {{team.full_name}}</h1>
+<div class="body_boarder">
+    <div class="top" align="left">
+        <h2><a href="{% url 'mlb:teams' %}">MLB TEAMS PAGE</a></h2>
+    </div>
+
+    <div class='jumbotron' align="center">
+        <h1>{{team.full_name}} Players</h1>
+    </div>
+
+    <div class="bottom" align="center" border-bottom="5px solid black" border-top="5px solid black">
+        <h4>Webscraping, Sorting, Modeling, Inheritance, and Database Queries with Python</h4>
+    </div>
 </div>
+
+
 
 {% endblock header %}
 
-<p>TEAMS</p>
-
 {% block content %}
 
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th scope="col">Player Name</th>

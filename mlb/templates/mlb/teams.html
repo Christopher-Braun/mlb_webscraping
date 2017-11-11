@@ -2,30 +2,35 @@
 
 {% block header %}
 
-<h3><a href="{% url 'mlb:index' %}">MLB HOME PAGE</h3>
 
-<div class='jumbotron'>
-    <h1>List of all teams</h1>
+<div class="body_boarder">
+
+        <div class="top">
+            <h2><a href="{% url 'mlb:index' %}">MLB HOME PAGE</a></h2>
+        </div>
+
+        <div class='jumbotron' align="center">
+            <h1>List of all teams</h1>
+        </div>
+  
 </div>
 
-{% endblock header %}
+    {% endblock header %}
 
-<p>PLAYERS</p>
+    {% block content %}
 
-{% block content %}
+    <div class="body_table">
+        <ul>
 
-<ul>
+            {% for team in teams %}
 
-    {% for team in teams %}
+            <h3>
+                <a href="{% url 'mlb:team' team.name %}">{{ team.full_name }}</a>
+            </h3>
 
+            {% endfor %}
 
-    <h3>
-        <a href="{% url 'mlb:team' team.name %}">{{ team.full_name }}</a>
-    </h3>
+        </ul>
+    </div>
 
-    {% endfor %}
-
-</ul>
-
-
-{% endblock content %}
+    {% endblock content %}

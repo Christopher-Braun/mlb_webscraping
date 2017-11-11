@@ -1,0 +1,25 @@
+﻿{% extends "mlb/base.html" %}
+
+{% load bootstrap3 %}
+
+{% block header %}
+
+<h3><a href="{% url 'mlb:index' %}">MLB HOME PAGE</h3>
+
+{% endblock header %}
+
+<p>PICTURES</p>
+
+{% block content %}
+
+
+<form action="{% url 'mlb:add_picture' %}" method='post'
+      class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button name="submit" class="btn btn-primary">add picture</button>
+    {% endbuttons %}
+</form>
+
+{% endblock content %}

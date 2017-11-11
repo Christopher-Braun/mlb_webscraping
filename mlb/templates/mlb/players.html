@@ -2,34 +2,50 @@
 
 {% block header %}
 
-<div class='jumbotron'>
-    <h1>List of all MLB Players</h1>
+<div class="body_boarder">
+    <div class="top">
+        <h2><a href="{% url 'mlb:index' %}">MLB HOME PAGE</a></h2>
+    </div>
+
+    <div class='jumbotron' align="center">
+        <h1>List of all MLB Players</h1>
+    </div>
+
 </div>
+
 
 {% endblock header %}
 
-<p>PLAYERS</p>
-
 {% block content %}
 
-<ul>
 
-    {% for player in player_new %}
-
-    <h3>
-        {{player}}
-        <a href="{% url 'mlb:team' player.team %}">{{ player.team }}</a>
-        {{player.league}}
-        {{player.games}}
-        {{player.Tav}}
-        {{player.VORP}}
-        {{player.FRAA}}
-        {{player.BWARP}}
-    </h3>
-
-    {% endfor %}
-
-</ul>
-
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Player Name</th>
+            <th scope="col">Team</th>
+            <th scope="col">League</th>
+            <th scope="col">Games</th>
+            <th scope="col">Tav</th>
+            <th scope="col">VORP</th>
+            <th scope="col">FRAA</th>
+            <th scope="col">BWARP</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for player in player_new|slice:":100" %}
+        <tr>
+            <td>{{player}}</td>
+            <th scope="row"><a href="{% url 'mlb:players' %}">{{player.team}}</a></th>
+            <td>{{player.league}}</td>
+            <td>{{player.games}}</td>
+            <td>{{player.Tav}}</td>
+            <td>{{player.VORP}}</td>
+            <td>{{player.FRAA}}</td>
+            <td>{{player.BWARP}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock content %}

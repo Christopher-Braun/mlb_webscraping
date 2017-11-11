@@ -1,0 +1,30 @@
+﻿{% extends "mlb/base.html" %}
+
+{% block header %}
+
+<div class="body_boarder">
+    <div class="top">
+        <h2><a href="{% url 'mlb:index' %}">MLB HOME PAGE</a></h2>
+    </div>
+
+    <div class='jumbotron' align="center">
+        <h1>List of all projects</h1>
+    </div>
+
+</div>
+
+    {% endblock header %}
+
+
+    {% block content %}
+
+    <h1><a href="{% url 'mlb:add_project' %}">Add project</h1>
+    <br />
+
+    {% for project in projects %}
+
+    <h3><a href="{% url 'mlb:project' project.name %}">{{ project.name }}</a></h3>
+    {{project.description}}
+    {% endfor %}
+
+    {% endblock content %}
