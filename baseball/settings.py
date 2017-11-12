@@ -135,7 +135,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 SERVER_EMAIL = EMAIL_HOST_USER
 
 
-
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Static files (CSS, JavaScript, Images)
