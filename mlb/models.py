@@ -32,7 +32,7 @@ class Player(models.Model):
 
 class Picture(models.Model):
     name = models.CharField(max_length=30)
-    image = models.FileField(upload_to="static", blank = True, null = True)
+    image = models.FileField(upload_to="media", blank = True, null = True)
 
     def __str__(self):
         return self.name
