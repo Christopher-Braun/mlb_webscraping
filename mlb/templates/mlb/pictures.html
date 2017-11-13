@@ -29,7 +29,7 @@
     {% for picture in pictures %}
 
     <div class="container-fluid">
-        <img src="{% static "image/picture.name" %}" alt="Picture" />
+        
         <div class="col-md-4">
             <h3>
                 <a href="{% url 'mlb:picture' picture.id%}">{{ picture.name }}</a>
