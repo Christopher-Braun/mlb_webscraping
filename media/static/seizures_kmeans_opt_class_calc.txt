@@ -1,0 +1,58 @@
+1
+Accuracy: 90.13%
+Area Under the Receiver Operating Characteristic Curve: 0.81%
+2
+Accuracy: 93.52%
+Area Under the Receiver Operating Characteristic Curve: 0.88%
+3
+Accuracy: 95.61%
+Area Under the Receiver Operating Characteristic Curve: 0.91%
+4
+Accuracy: 96.04%
+Area Under the Receiver Operating Characteristic Curve: 0.92%
+
+-------------------------------------------
+The optimal number of PCA components is:  4
+-------------------------------------------
+Out[4]: 
+([0.90130434782608693,
+  0.93521739130434778,
+  0.95608695652173914,
+  0.96043478260869564],
+ [0.80681570812834691,
+  0.87978604012170991,
+  0.91486713976809331,
+  0.91586123325641799])
+
+Using 3 Kmeans neighbors and 4 PCA components: 
+Accuracy: 95.78%
+Area Under the Receiver Operating Characteristic Curve: 0.91%
+--------------------------------------
+Using 4 Kmeans neighbors and 4 PCA components: 
+Accuracy: 96.09%
+Area Under the Receiver Operating Characteristic Curve: 0.91%
+--------------------------------------
+Using 5 Kmeans neighbors and 4 PCA components: 
+Accuracy: 95.96%
+Area Under the Receiver Operating Characteristic Curve: 0.92%
+
+
+([[[3], [4], [0.95782608695652172], [0.91424311027907179]],
+  [[4], [4], [0.96086956521739131], [0.91102258599755226]],
+  [[5], [4], [0.95956521739130429], [0.915321858930636]]],
+ 
+array([[1827,   27],		
+       [  70,  376]]), 
+
+array([[1840,   14],
+       [  76,  370]]), 
+
+array([[1831,   23],
+       [  70,  376]])])
+
+KFOLD AVERAGE AND STD DEVIATION
+Accuracy Average: 0.95934696117
+Accuracy Standard Deviation: 0.00656850395195
+
+Almost as accurate as Keras (Tensorflow) with a minimal increase in variance 
+and significantly less computing power.
