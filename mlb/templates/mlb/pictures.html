@@ -34,10 +34,12 @@
             <h3>
                 <a href="{% url 'mlb:picture' picture.id%}">{{ picture.name }}</a>
             </h3>
+            {% if picture.image %}
             <div class="thumbnail">
                 <img src="{{picture.image.url}}" alt="HTML5 Icon" style="width:100%">
                 <div class="caption" align="center">
                     <h2>{{ picture }}</h2>
+                {% endif %}
                 </div>
             </div>
         </div>
