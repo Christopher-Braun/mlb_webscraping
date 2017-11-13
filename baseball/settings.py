@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '68yrp2a5s4a-&##ayjcltx&=-!e(pgx^m--x!8+vw7+d-4(kt*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Allow only Heroku to host the project.
 # ALLOWED_HOSTS = ['chris-mlb-stats.herokuapp.com']
@@ -179,12 +179,12 @@ if cwd == '/app' or cwd[:4] == '/tmp':
 	# Static asset configuration
 	#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-	STATIC_ROOT = 'staticfiles'
+	STATIC_ROOT = 'static'
 	STATICFILES_DIRS = (
 		os.path.join(BASE_DIR, 'static'),
 	)
 
-	MEDIA_ROOT = 'mediafiles'
+	MEDIA_ROOT = 'media'
 	MEDIAFILES_DIRS = (
 		os.path.join(BASE_DIR, 'media'),
 	)

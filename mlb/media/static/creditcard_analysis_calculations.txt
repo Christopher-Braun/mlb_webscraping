@@ -1,0 +1,60 @@
+PCA OPTIMIZATION
+
+1
+Accuracy: 87.16%
+Area Under the Receiver Operating Characteristic Curve: 0.87%
+2
+Accuracy: 92.23%
+Area Under the Receiver Operating Characteristic Curve: 0.92%
+3
+Accuracy: 92.23%
+Area Under the Receiver Operating Characteristic Curve: 0.92%
+4
+Accuracy: 94.93%
+Area Under the Receiver Operating Characteristic Curve: 0.95%
+
+-------------------------------------------
+The optimal number of PCA components is:  4
+-------------------------------------------
+
+
+K-NN OPTIMIZATION
+
+Using 3 Kmeans neighbors and 4 PCA components: 
+Accuracy: 93.58%
+Area Under the Receiver Operating Characteristic Curve: 0.94%
+--------------------------------------
+Using 4 Kmeans neighbors and 4 PCA components: 
+Accuracy: 92.91%
+Area Under the Receiver Operating Characteristic Curve: 0.93%
+--------------------------------------
+Using 5 Kmeans neighbors and 4 PCA components: 
+Accuracy: 94.93%
+Area Under the Receiver Operating Characteristic Curve: 0.95%
+
+([[[3], [4], [0.93581081081081086], [0.93560242889101952]],
+  [[4], [4], [0.92905405405405406], [0.92866274026389084]],
+  [[5], [4], [0.94932432432432434], [0.94916221522165922]]],
+ 
+
+CM MATRIX
+
+ [array([[144,   5],
+         [ 14, 133]]), 
+  array([[147,   2],
+         [ 19, 128]]), 
+  array([[145,   4],
+         [ 11, 136]])])
+
+
+KFOLD
+
+Accuracy Average: 0.931894409938
+Accuracy Standard Deviation: 0.0229024723257
+
+
+NEURAL NETWORK TRAINED WITH KFOLD AND OPTIMIZED WITH GRID SEARCH
+batch_size: [5, 30], nb_epoch: [100, 500]
+
+Accuracy: 0.937531969396
+Standard Deviation: 0.0194193956993

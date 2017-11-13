@@ -32,7 +32,7 @@ class Player(models.Model):
 
 class Picture(models.Model):
     name = models.CharField(max_length=30)
-    image = models.FileField(upload_to="media", blank = True, null = True)
+    image = models.FileField(upload_to="static", blank = True, null = True)
 
     def __str__(self):
         return self.name
@@ -42,12 +42,12 @@ class Project(models.Model):
 	description = models.CharField(max_length=300)
 	file = models.FileField(upload_to="static", blank = True, null = True)
 	calculations = models.FileField(upload_to="static", blank = True, null = True)
-	proj_image = models.FileField(upload_to="media", blank = True, null = True)
+	proj_image = models.FileField(upload_to="static", blank = True, null = True)
 	
 	def __str__(self):
 		return self.name
 
 class ProjectPic(models.Model):
 	name = models.CharField(max_length=50)
-	chart = models.FileField(upload_to="media", blank = True, null = True)
+	chart = models.FileField(upload_to="static", blank = True, null = True)
 	project = models.ForeignKey(Project)
