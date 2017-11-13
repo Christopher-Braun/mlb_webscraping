@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '68yrp2a5s4a-&##ayjcltx&=-!e(pgx^m--x!8+vw7+d-4(kt*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Allow only Heroku to host the project.
 # ALLOWED_HOSTS = ['chris-mlb-stats.herokuapp.com']
