@@ -36,6 +36,7 @@
             </h3>
             {% if picture.image %}
             <div class="thumbnail">
+                <img src="{% static " image/picture.image" %}" alt="Picture" />
                 <img src="{{picture.image.url}}" alt="HTML5 Icon" style="width:100%">
                 <div class="caption" align="center">
                     <h2>{{ picture }}</h2>
