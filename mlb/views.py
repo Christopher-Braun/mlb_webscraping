@@ -161,6 +161,7 @@ def project(request, project_name):
 	if pro_calc:
 		with open(pro_calc) as file_object:
 			calcs = file_object.readlines()
+		calc_save = calcs.save()
 		file_object.close()
 	else:
 		nocalcs = '/Users/mrcrb/Documents/Python/Baseball/ll_env/static/nocalcs.txt'
