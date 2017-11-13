@@ -185,6 +185,11 @@ if cwd == '/app' or cwd[:4] == '/tmp':
 		os.path.join(BASE_DIR, 'static'),
 	)
 
+	MEDIA_ROOT = 'mediafiles'
+	MEDIAFILES_DIRS = (
+		os.path.join(BASE_DIR, 'media'),
+	)
+
 	#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 	STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
