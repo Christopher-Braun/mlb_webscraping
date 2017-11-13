@@ -167,7 +167,7 @@ print("--- CWD ---\n", cwd, "\n---\n")
 if cwd == '/app' or cwd[:4] == '/tmp':
 	import dj_database_url
 	DATABASES = {
-		'default': dj_database_url.config(default='postgres://127.0.0.1')
+		'default': dj_database_url.config()
 	}
     
 	# Honor the 'X-Forwarded-Proto' header for request.is_secure().
