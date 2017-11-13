@@ -1,2 +1,2 @@
 web: gunicorn baseball.wsgi --log-file -
-worker: python worker.py
+python manage.py collectstatic --noinput
