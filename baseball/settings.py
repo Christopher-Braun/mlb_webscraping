@@ -166,7 +166,7 @@ print("--- CWD ---\n", cwd, "\n---\n")
 if cwd == '/app' or cwd[:4] == '/tmp':
 	import dj_database_url
 	DATABASES = {
-		'default': dj_database_url.config()
+		'default': dj_database_url.config(default='postgres://127.0.0.1')
 	}
     
 	# Honor the 'X-Forwarded-Proto' header for request.is_secure().
@@ -174,7 +174,7 @@ if cwd == '/app' or cwd[:4] == '/tmp':
     
 	# Allow only Heroku to host the project.
 	ALLOWED_HOSTS = ['chris-mlb-stats.herokuapp.com']
-	DEBUG = True
+	DEBUG = False
 
 	# Static asset configuration
 	BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
