@@ -19,7 +19,7 @@
 
 
     {% block content %}
-
+{% load static from staticfiles %}
     <div class="add_pic" align="right">
         <h3>
             <a href="{% url 'mlb:add_picture' %}">Add picture</a>
@@ -29,14 +29,13 @@
     {% for picture in pictures %}
 
     <div class="container-fluid">
-
+        <img src="{% static " image/picture.image" %}" alt="Picture" />
         <div class="col-md-4">
             <h3>
                 <a href="{% url 'mlb:picture' picture.id%}">{{ picture.name }}</a>
             </h3>
             {% if picture.image %}
             <div class="thumbnail">
-                <img src="{% static " image/picture.image" %}" alt="Picture" />
                 <img src="{{picture.image.url}}" alt="HTML5 Icon" style="width:100%">
                 <div class="caption" align="center">
                     <h2>{{ picture }}</h2>
