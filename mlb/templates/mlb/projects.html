@@ -22,7 +22,7 @@
     <br />
 
     {% for project in projects %}
-
+    <link rel="stylesheet" href="{%  static " /project.file" %}">
     <h3><a href="{% url 'mlb:project' project.name %}">{{ project.name }}</a></h3>
     {{project.description}}
     {% endfor %}
